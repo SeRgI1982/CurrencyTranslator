@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
 
 namespace CurrencyTranslator
@@ -11,7 +7,22 @@ namespace CurrencyTranslator
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            try
+            {
+                var bootstrapper = new Bootstrapper();
+                bootstrapper.Run();
+            }
+            catch (Exception ex)
+            {
+                Trace.Write(ex);
+                throw;
+            }
+
+            base.OnStartup(e);
+        }
     }
 }

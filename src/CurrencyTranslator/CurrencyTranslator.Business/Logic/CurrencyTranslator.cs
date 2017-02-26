@@ -7,7 +7,7 @@ using CurrencyTranslator.Business.Utils;
 
 namespace CurrencyTranslator.Business.Logic
 {
-    internal class CurrencyTranslator : ICurrencyTranslator
+    public class CurrencyTranslator : ICurrencyTranslator
     {
         private readonly INumberParser _parser;
         private readonly INumberToWordsConverter _converter;
@@ -66,7 +66,7 @@ namespace CurrencyTranslator.Business.Logic
             {
                 var fractionText = fraction.ToString(CultureInfo.InvariantCulture);
                 fractionText = fractionText.Substring(fractionText.IndexOf('.') + 1);
-                result.Add(int.Parse(fractionText));
+                result.Add(int.Parse(fractionText.Length == 1 ? fractionText +  "0" : fractionText));
             }
 
             return result.ToArray();

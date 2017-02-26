@@ -1,6 +1,6 @@
 ﻿namespace CurrencyTranslator.Business.Utils
 {
-    internal interface INumberParser
+    public interface INumberParser
     {
         /// <summary>
         /// Parse number value in text to the decimal value.

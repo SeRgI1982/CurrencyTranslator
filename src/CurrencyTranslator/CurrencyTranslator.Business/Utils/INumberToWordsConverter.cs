@@ -1,6 +1,6 @@
 ﻿namespace CurrencyTranslator.Business.Utils
 {
-    internal interface INumberToWordsConverter
+    public interface INumberToWordsConverter
     {
         /// <summary>
         /// Converts int number value to the number value in words.

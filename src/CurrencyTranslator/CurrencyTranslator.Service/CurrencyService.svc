@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CurrencyTranslator.Service.CurrencyService" CodeBehind="CurrencyService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CurrencyTranslator.Service.CurrencyService" Factory="CurrencyTranslator.Service.WcfServiceFactory" %>

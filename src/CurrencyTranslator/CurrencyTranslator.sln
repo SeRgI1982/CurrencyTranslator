@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyTranslator", "CurrencyTranslator\CurrencyTranslator.csproj", "{4D6C6AFA-0382-4563-915B-A90F0714350D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BFD29DC-974F-4756-B2C2-D5C1F2FDE3A2} = {2BFD29DC-974F-4756-B2C2-D5C1F2FDE3A2}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{9034A838-D0A3-49FB-99CE-5A56F48B69E7}"
 EndProject

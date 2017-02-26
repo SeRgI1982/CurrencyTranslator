@@ -11,7 +11,7 @@ namespace CurrencyTranslator.Business.Utils
     /// 
     /// According to SOLID principles, always we can provide our own implementation of INumberToWrodsConverter (not dependednt on external solutions)
     /// </summary>
-    internal class NumberToWordsConverter : INumberToWordsConverter
+    public class NumberToWordsConverter : INumberToWordsConverter
     {
         private readonly Humanizer.Localisation.NumberToWords.INumberToWordsConverter _converter;
 

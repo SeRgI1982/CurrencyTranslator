@@ -4,7 +4,7 @@ using System.Globalization;
 namespace CurrencyTranslator.Business.Utils
 {
     // Thanks to that class we are able to introduce in future a shortcuts for ex.: 1M  = 1 000 000, 1K = 1 000
-    internal class NumberParser : INumberParser
+    public class NumberParser : INumberParser
     {
         public decimal Parse(string text)
         {
@@ -15,9 +15,9 @@ namespace CurrencyTranslator.Business.Utils
 
             text = text.Replace(" ", "");
 
-            if (text.Length > 0 && (text[0] != '-' && text[0] != '+' && !char.IsDigit(text[0])))
+            if (text.Length > 0 && (text[0] == '.' || text[0] == ','))
             {
-                throw new FormatException(text);
+                throw new FormatException($"Input string '{text}' was not in correct format.");
             }
 
             var containsNumberDecimalSeparator = text.Contains(CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator);
