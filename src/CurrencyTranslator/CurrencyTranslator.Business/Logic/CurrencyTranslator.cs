@@ -42,11 +42,6 @@ namespace CurrencyTranslator.Business.Logic
 
             for (int i = 0; i < numberParts.Length; i++)
             {
-                if (i == 1 && numberParts[i] > 99)
-                {
-                    throw new NotSupportedException("Translator doesn't support more than 2 places");
-                }
-
                 var part = numberParts[i];
                 var partInWords = _converter.Convert(part);
                 words.Add($"{partInWords} {endings[i]}{(part == 1 ? "" : "s")}");
@@ -66,6 +61,12 @@ namespace CurrencyTranslator.Business.Logic
             {
                 var fractionText = fraction.ToString(CultureInfo.InvariantCulture);
                 fractionText = fractionText.Substring(fractionText.IndexOf('.') + 1);
+
+                if (fractionText.Length > 2)
+                {
+                    throw new NotSupportedException("Translator doesn't support more than 2 places");
+                }
+
                 result.Add(int.Parse(fractionText.Length == 1 ? fractionText +  "0" : fractionText));
             }
 
